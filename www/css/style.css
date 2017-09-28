@@ -1,0 +1,102 @@
+/* Empty. Add your own CSS if you like */
+.content-interno{
+  padding: 3%;
+}
+
+.home-panel, .gprag-panel{
+  padding: 5%;
+  background-image: url("../img/app-background.jpg");
+}
+.button-home{
+  padding-bottom: 30px;
+}
+
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.msg-sucesso-centro{
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+#botao-home-id{
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  color: white;
+}
+
+/*Botão voltar em todo o sistema*/
+#botao-voltar{
+  border-radius: 10px;
+  width: 30%;
+  margin-right: 5%;
+}
+
+.topo{
+  padding-top: 10px;
+}
+
+.gprag-header{
+  display: flex;
+  align-items: center;
+}
+
+/*Exibido quando indisponibilidade de serviço*/
+.message-service{
+  text-align: center;
+  color: white;
+  border: none;
+  padding-top: 50px;
+  font-size: 1.4em;
+  font-weight: bold;
+  background: none;
+}
+
+/*exibido quando sem conexão*/
+.msgSemConexao{
+  border: 5px solid blue;
+  background-color: blue;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 3%;
+}
+
+.msgSemConexao h4{
+  color:white;
+}
+
+/*SEMPRE QUE HOUVERU MA LISTAGEM DE CLIENTES
+Tela de avisos e Listagem da busca
+*/
+#listagem-clientes{
+  color: white;
+  font-size: 1.2em;
+}
+
+.cliente-item{
+  padding: 5px 0 10px 5px;
+  border-bottom: 1px solid #FF9;
+}
+.cliente-nome{
+  width: 60%;
+  display: inline-block;
+}
+.cliente-options{
+  display: inline-table;
+}
+.cliente-options img{
+  margin-left: 5px;
+}
+
+#home-footer{
+  float: right;
+  color: pink;
+  font-weight: bold;
+}

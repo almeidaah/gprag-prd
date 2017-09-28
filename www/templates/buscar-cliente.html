@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="css/buscarCliente.css" />
+
+<ion-pane class="gprag-panel">
+  <ion-content class="content-interno">
+
+  <header class="gprag-header">
+    <button id="botao-voltar" class="button button-block button-balanced" ng-click="ctrl.voltar()" >
+      <b>Voltar</b>
+    </button>
+    <label class="item center-topo">
+        <b>Buscar Cliente</b>
+    </label>
+  </header>
+
+  <div ng-show="ctrl.msgErro != ''" class="message-service">
+        {{ctrl.msgErro}}
+  </div>
+
+  <div ng-show="ctrl.msgSucesso != ''" class="message-service">
+        <img src="img/sucesso.png" width="30" height="30" />
+        {{ctrl.msgSucesso}}
+  </div>
+
+  <div ng-show="ctrl.msgErro == ''">
+    <label class="item search-input">
+      <input type="text" class="input" id="nomeCliente" ng-change="ctrl.buscarCliente(this)" ng-model="ctrl.nmCliente">
+      <span class="span-required">
+        * Informe 3 letras ou mais
+      </span>
+    </label>
+
+    <ul id="listagem-clientes">
+        <li ng-repeat="cliente in ctrl.listClients" class="cliente-item">
+          <div class="cliente-nome">
+            {{cliente.nome}}
+          </div>
+
+          <div class="cliente-options">
+              <img src="img/edit.png" width="35" height="35" ng-click="ctrl.editarCliente(cliente)">
+              <img src="img/jobs.png" width="35" height="35" ng-click="ctrl.buscarTrabalhos(cliente.id)">
+              <img src="img/delete.png" width="35" height="35" ng-click="ctrl.removerCliente(cliente.id)">
+          </div>
+        </li>
+    </ul>
+  </div>
+  </ion-content>
+
+</ion-pane>

@@ -1,0 +1,57 @@
+<link rel="stylesheet" type="text/css" href="css/avisos.css" />
+
+<ion-pane class="gprag-panel">
+  <ion-content class="content-interno">
+
+<header>
+  <button id="botao-voltar" class="button button-block button-positive" ng-click="ctrl.voltar()" >
+      <b>Voltar</b>
+  </button>
+</header>
+
+<div ng-show="ctrl.msgErro != ''" class="message-service">
+      {{ctrl.msgErro}}
+</div>
+
+  <div ng-show="ctrl.msgErro == ''">
+
+    <label class="item search-input">
+        Clientes a Vencer:
+    </label>
+
+    <ul id="listagem-clientes">
+    </li>
+        <li ng-repeat="cliente in ctrl.listAVencer" class="cliente-item">
+          <div class="cliente-nome">
+            {{cliente.nome}}
+          </div>
+
+          <div class="cliente-options">
+            <b>{{cliente.venceEm}}</b>
+              <img src="img/edit.png" width="40" height="40" ng-click="ctrl.editarCliente(cliente)">
+          </div>
+        </li>
+    </ul>
+
+    <label class="item search-input">
+        Clientes Já Vencidos:
+    </label>
+
+    <ul id="listagem-clientes">
+    </li>
+        <li ng-repeat="cliente in ctrl.listVencidos" class="cliente-item">
+          <div class="cliente-nome">
+            {{cliente.nome}}
+          </div>
+
+          <div class="cliente-options">
+            <b>{{cliente.diasVencido}}</b>
+              <img src="img/edit.png" width="40" height="40" ng-click="ctrl.editarCliente(cliente)">
+
+          </div>
+        </li>
+    </ul>
+
+  </div>
+</ion-content>
+</ion-pane>

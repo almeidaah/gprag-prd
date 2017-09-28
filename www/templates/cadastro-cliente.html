@@ -1,0 +1,80 @@
+<link rel="stylesheet" type="text/css" href="css/cadastroCliente.css" />
+<link rel="stylesheet" type="text/css" href="css/cadastro-comum.css" />
+
+
+<ion-pane class="gprag-panel">
+  <ion-content class="content-interno">
+
+  <header class="gprag-header">
+    <button id="botao-voltar" class="button button-block button-balanced" ng-click="ctrl.voltar()" >
+      <b>Voltar</b>
+    </button>
+    <label class="item center-topo">
+        <b>Cadastrar cliente</b>
+    </label>
+
+  </header>
+
+  <form ng-submit="ctrl.cadastrarCliente(ctrl.cliente)" class="form-login" name="formcliente">
+
+    <label class="item client-input">
+        Nome/Razão Social
+        <input type="text" class="input" name="nome" ng-model="ctrl.cliente.nome" maxlength="40" required>
+        <span ng-show="formcliente.nome.$invalid" class="span-required">
+          * Informe o nome do cliente
+        </span>
+    </label>
+
+    <label class="item client-input">
+        Endereço completo
+        <input type="text" class="input" name="endereco" ng-model="ctrl.cliente.endereco" maxlength="50" required>
+        <span ng-show="formcliente.endereco.$invalid" class="span-required">
+          * Informe o endereço
+        </span>
+    </label>
+
+
+    <label class="item client-input">
+        Telefone
+        <input type="number" class="input" name="telefone" ng-model="ctrl.cliente.telefone" required>
+        <span ng-show="formcliente.telefone.$invalid" class="span-required">
+          * Informe o telefone(Apenas números)
+        </span>
+    </label>
+
+    <label class="item client-input">
+        E-mail
+        <input type="email" class="input" name="email" maxlength="30" ng-model="ctrl.cliente.email">
+        <span ng-show="formcliente.email.$error.email" class="span-required">
+          * Informe um email válido!
+        </span>
+    </label>
+
+    <!-- <label class="item client-input client-input-ativo">
+      Ativo?
+      <ion-toggle ng-model="ctrl.cliente.status" class="client-toggle" toggle-class="toggle-calm" ng-model="ctrl.cliente.status" />
+    </label> -->
+    <label class="item client-input ">
+        Período Necessidade até
+        <input type="date" id="periodo-necessidade-picker-cliente" ng-model="ctrl.cliente.periodoNecessidade"/>
+    </label>
+
+    <button class="button button-block button-calm" ng-show="!ctrl.updateCliente" >
+      <b>Cadastrar</b>
+    </button>
+    <div class="cliente-edit" ng-show="ctrl.updateCliente" >
+      <button class="button button-block button-balanced">
+        <b>Atualizar</b>
+      </button>
+    </div>
+  </form>
+  <div class="div-prorrogar" ng-show="ctrl.updateCliente" >
+    <button id="botao-prorrogar" class="button button-block button-assertive" ng-click="ctrl.atualizarPeriodoCliente(ctrl.cliente.id, 6)" ng-disabled="false" >
+          <b>6 meses</b>
+    </button>
+    <button id="botao-prorrogar" class="button button-block button-assertive" ng-click="ctrl.atualizarPeriodoCliente(ctrl.cliente.id, 12)" ng-disabled="false" >
+          <b>12 meses</b>
+    </button>
+  </div>
+</ion-content>
+</ion-pane>

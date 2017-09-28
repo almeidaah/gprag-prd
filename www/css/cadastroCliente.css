@@ -1,0 +1,42 @@
+.client-input{
+  border:none;
+  font-size: 1.3em;
+  background:none;
+  color: #11c1f3;
+  padding: 0 0 5px 5px;
+}
+.client-input .input{
+  background:none;
+  color: #FFF;
+  font-size: 0.8em;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+
+/*.client-input-ativo{
+  display: flex;
+  padding: 0px 0 0px 5px;
+  font-size: 1.4em;
+}*/
+
+/*.client-toggle{
+  background: none;
+  border: none;
+  display: list-item;
+  width: 100%;
+}*/
+
+.div-prorrogar{
+  display: flex;
+}
+
+#periodo-necessidade-picker-cliente{
+  background: transparent;
+  color: greenyellow;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#botao-prorrogar{
+  margin: 10px 20px 0px 20px;
+}

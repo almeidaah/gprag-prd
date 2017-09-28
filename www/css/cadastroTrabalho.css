@@ -1,0 +1,42 @@
+.job-input{
+  border:none;
+  font-size: 1.3em;
+  background:none;
+  color: #11c1f3;
+  padding: 0 0 5px 5px;
+}
+.job-input .input{
+  background:none;
+  color: #FFF;
+  font-size: 0.8em;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+
+.list-checkbox{
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.client-select{
+  font-size: 1.8em;
+  color: greenyellow;
+  word-wrap: break-word;
+  width: 95%;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 2%;
+}
+
+.job-checkbox{
+  background: none;
+  border: none;
+  color: white;  font-weight: bold;
+  padding: 5px 0 5px 50px;
+}
+
+#periodo-necessidade-picker-trabalho {
+  background: transparent;
+  color: greenyellow;
+  font-weight: bold;
+  font-size: 1.4em;
+}

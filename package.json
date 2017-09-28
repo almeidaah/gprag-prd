@@ -1,0 +1,53 @@
+{
+    "name": "fitmeapp-v1",
+    "version": "1.1.1",
+    "description": "fitmeapp-v1: An Ionic project",
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-app-event": "file:node_modules/cordova-plugin-app-event",
+        "cordova-plugin-camera": "git+https://github.com/apache/cordova-plugin-camera.git",
+        "cordova-plugin-compat": "^1.1.0",
+        "cordova-plugin-inappbrowser": "^1.7.1",
+        "cordova-plugin-network-information": "~1.2.0",
+        "cordova-plugin-whitelist": "^1.3.2",
+        "de.appplant.cordova.plugin.local-notification": "^0.8.5",
+        "gulp-concat": "^2.2.0",
+        "gulp-minify-css": "^0.3.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^2.0.4"
+    },
+    "devDependencies": {
+        "@ionic/cli-plugin-cordova": "1.6.2",
+        "@ionic/cli-plugin-gulp": "1.1.0",
+        "@ionic/cli-plugin-ionic1": "2.1.0",
+        "bower": "^1.8.0",
+        "gulp": "^3.9.1",
+        "gulp-util": "^2.2.20",
+        "node-sass": "^4.5.3",
+        "shelljs": "^0.3.0"
+    },
+    "cordovaPlugins": [
+        "cordova-plugin-console",
+        "cordova-plugin-statusbar",
+        "cordova-plugin-whitelist",
+        "cordova-plugin-splashscreen",
+        "cordova-plugin-device",
+        "ionic-plugin-keyboard"
+    ],
+    "cordovaPlatforms": [],
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-camera": {
+                "CAMERA_USAGE_DESCRIPTION": "Este aplicativo requer acesso à câmera.",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": "Este aplicativo requer acesso à biblioteca de fotos."
+            },
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-whitelist": {},
+            "de.appplant.cordova.plugin.local-notification": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}

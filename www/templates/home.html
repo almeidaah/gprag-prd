@@ -1,0 +1,35 @@
+
+<ion-view view-title="GPRAG - Bem Vindo" hide-nav-bar="true" class="view-background" >
+
+<ion-pane class="home-panel">
+
+    <check-internet></check-internet>
+
+    <header class="topo">
+      <img src="img/ionic.png" width="250" height="230" class="center-block img-center" />
+    </header>
+
+      <button id="botao-home-id" class="button button-block button-positive" ng-click="ctrl.listarAvisos()" ng-disabled="semConexao" >
+          Clientes a vencer/vencidos <span style="color:red;font-weight:bold">{{ctrl.listAVencer.length > 0 ? [ctrl.listAVencer.length] : ""}}</span>
+      </button>
+
+      <button id="botao-home-id" class="button button-block button-balanced" ng-click="ctrl.novoCadastroCliente()" ng-disabled="semConexao">
+        Cadastrar novo cliente
+      </button>
+
+      <button id="botao-home-id" class="button button-block button-balanced" ng-click="ctrl.novoCadastroTrabalho()" ng-disabled="semConexao" >
+        Cadastrar novo trabalho
+      </button>
+
+      <button id="botao-home-id" class="button button-block button-balanced" ng-click="ctrl.buscarCliente()" ng-disabled="semConexao" >
+        Buscar Cliente
+      </button>
+
+    <footer>
+        <div id="home-footer">
+            Versão 1.4.0
+        </div>
+    </footer>
+
+</ion-pane>
+</ion-view>

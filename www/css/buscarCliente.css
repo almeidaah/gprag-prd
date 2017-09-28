@@ -1,0 +1,27 @@
+.center-topo{
+  color: white;
+  border: none;
+  background: none;
+  font-size: 1.3em;
+}
+
+.search-input{
+  border:none;
+  font-size: 1.7em;
+  background:none;
+  color: lightblue;
+  text-align: center;
+}
+
+.search-input input{
+  border-bottom: 2px solid #fff;
+  font-size: 0.8em;
+  background:none;
+  color: white;
+  width: 100%;
+}
+
+.span-required{
+  color: yellow;
+  font-size: 0.8em;
+}

@@ -1,0 +1,70 @@
+<link rel="stylesheet" type="text/css" href="css/listTrabalho.css" />
+
+<ion-pane class="gprag-panel">
+  <ion-content class="content-interno" ng-init="ctrl.listTrabalhos()">
+
+  <header>
+  <button id="botao-voltar" class="button button-block button-balanced" ng-click="ctrl.voltarBusca()" >
+      <b>Voltar</b>
+    </button>
+  </header>
+
+    <div ng-show="ctrl.msgSucesso != ''" class="message-service">
+          <img src="img/sucesso.png" width="30" height="30" />
+          {{ctrl.msgSucesso}}
+    </div>
+
+    <div ng-show="ctrl.listTrabalhos.length == 0" class="message-service">
+          O Cliente não possui trabalhos cadastrados
+    </div>
+
+    <ul id="listagem-trabalhos">
+
+        <li ng-repeat="trabalho in ctrl.listTrabalhos" class="trabalho-list">
+          <div class="trabalho-item">
+            Valor : R{{trabalho.valor | currency}}
+          </div>
+          <div class="trabalho-item">
+             Representante :
+             <ng-show ng-show="trabalho.representante">
+               {{trabalho.representante}}
+             </ng-show>
+             <ng-show ng-show="!trabalho.representante">
+               Não informado.
+             </ng-show>
+          </div>
+          <div class="trabalho-item">
+            Aplicador :
+            <ng-show ng-show="trabalho.aplicador">
+              {{trabalho.aplicador}}
+            </ng-show>
+            <ng-show ng-show="!trabalho.aplicador">
+              Não informado.
+            </ng-show>
+          </div>
+
+          <div class="trabalho-item">
+            Período necessidade :
+            <ng-show ng-show="trabalho.periodoNecessidade">
+              {{trabalho.periodoNecessidade}}
+            </ng-show>
+          </div>
+
+          <div class="trabalho-item">
+            Trabalhos Realizados:
+            <br />
+            <ng-repeat ng-repeat="tipoTrabalho in trabalho.tipoTrabalho">
+              <ng-show ng-show="{{tipoTrabalho.enabled}}">
+                <b>{{tipoTrabalho.text}}</b>
+              </ng-show>
+            </ng-repeat>
+          </div>
+
+          <div class="trabalho-edit">
+              <img src="img/delete.png" width="40" height="40" ng-click="ctrl.removerTrabalho(trabalho.id)">
+          </div>
+        </li>
+    </ul>
+  </ion-content>
+
+</ion-pane>

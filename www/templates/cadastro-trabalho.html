@@ -1,0 +1,70 @@
+<link rel="stylesheet" type="text/css" href="css/cadastroTrabalho.css" />
+<link rel="stylesheet" type="text/css" href="css/cadastro-comum.css" />
+
+
+<ion-pane class="gprag-panel">
+  <ion-content class="content-interno">
+  <header class="gprag-header">
+    <button id="botao-voltar" class="button button-block button-balanced" ng-click="ctrl.voltar()" >
+      <b>Voltar</b>
+    </button>
+    <label class="item center-topo">
+        <b>Cadastrar trabalho</b>
+    </label>
+  </header>
+
+  <div ng-show="ctrl.msgErro != ''" class="message-service">
+        {{ctrl.msgErro}}
+  </div>
+
+  <form ng-submit="ctrl.cadastrarTrabalho(ctrl.trabalho)" ng-show="ctrl.msgErro == ''" class="form-login" name="formtrabalho">
+
+    <label class="item job-input">
+         Cliente 
+    </label>
+    <select class="job-input item-select client-select" ng-model="ctrl.trabalho.idCliente" ng-options="cliente.id as cliente.nome for cliente in  ctrl.listClients" required />
+    </select>
+
+    <div class="item job-input ">
+        <div>Trabalho(s) Realizado(s)</div>
+        <div class="list list-checkbox">
+          <ion-checkbox class="job-checkbox" ng-repeat="checkbox in ctrl.trabalho.tipoTrabalho"
+                        ng-model="checkbox.enabled"
+                        ng-value="{{checkbox.text}}">{{checkbox.text}}
+          </ioncheckbox>
+        </div>
+    </div>
+
+    <label class="item job-input">
+        Valor(apenas números)
+        <div>
+        <input type="number" class="input" name="valorTotal" ng-model="ctrl.trabalho.valorTotal" required/>
+      </div>
+    </label>
+    <span ng-show="formtrabalho.valorTotal.$invalid" class="span-required">
+      * Insira um valor
+    </span>
+
+    <label class="item job-input">
+        Representante
+        <input type="text" class="input" ng-model="ctrl.trabalho.representante" maxlength="30" name="representante">
+    </label>
+
+    <label class="item job-input">
+        Aplicador
+        <input type="text" class="input" ng-model="ctrl.trabalho.aplicador" maxlength="30" name="aplicador" >
+    </label>
+
+    <label class="item job-input">
+      Período Necessidade até
+      <input type="date" id="periodo-necessidade-picker-trabalho" ng-model="ctrl.trabalho.periodoNecessidade"/>
+    </label>
+
+    <button class="button button-block button-calm" >
+      <b>Cadastrar</b>
+    </button>
+
+
+  </form>
+</ion-content>
+</ion-pane>
